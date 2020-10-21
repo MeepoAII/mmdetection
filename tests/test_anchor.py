@@ -408,3 +408,11 @@ def test_guided_anchor():
     anchors = ga_retina_head.square_anchor_generator.grid_anchors(
         featmap_sizes, device)
     assert len(anchors) == 5
+
+
+
+def mytest():
+    print("learn mmdetection from here")
+
+if __name__ == '__main__':
+    mytest()
