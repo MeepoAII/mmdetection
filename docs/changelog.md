@@ -1,5 +1,78 @@
 ## Changelog
 
+### v2.7.0 (30/11/2020)
+
+- Support new method: [DETR](https://arxiv.org/abs/2005.12872), [ResNest](https://arxiv.org/abs/2004.08955), Faster R-CNN DC5.
+- Support YOLO, Mask R-CNN, and Cascade R-CNN models exportable to ONNX.
+
+#### New Features
+
+- Support [DETR](https://arxiv.org/abs/2005.12872) (#4201, #4206)
+- Support to link the best checkpoint in training (#3773)
+- Support to override config through options in inference.py (#4175)
+- Support YOLO, Mask R-CNN, and Cascade R-CNN models exportable to ONNX (#4087, #4083)
+- Support [ResNeSt](https://arxiv.org/abs/2004.08955) backbone (#2959)
+- Support unclip border bbox regression (#4076)
+- Add tpfp func in evaluating AP (#4069)
+- Support mixed precision training of SSD detector with other backbones (#4081)
+- Add Faster R-CNN DC5 models (#4043)
+
+#### Bug Fixes
+
+- Fix bug of `gpu_id` in distributed training mode (#4163)
+- Support Albumentations with version higher than 0.5 (#4032)
+- Fix num_classes bug in faster rcnn config (#4088)
+- Update code in docs/2_new_data_model.md (#4041)
+
+#### Improvements
+
+- Ensure DCN offset to have similar type as features in VFNet (#4198)
+- Add config links in README files of models (#4190)
+- Add tutorials for loss conventions (#3818)
+- Add solution to installation issues in 30-series GPUs (#4176)
+- Update docker version in get_started.md (#4145)
+- Add model statistics and polish some titles in configs README (#4140)
+- Clamp neg probability in FreeAnchor (#4082)
+- Speed up expanding large images (#4089)
+- Fix Pytorch 1.7 incompatibility issues (#4103)
+- Update trouble shooting page to resolve segmentation fault (#4055)
+- Update aLRP-Loss in project page (#4078)
+- Clean duplicated `reduce_mean` function (#4056)
+- Refactor Q&A (#4045)
+
+
+### v2.6.0 (1/11/2020)
+
+- Support new method: [VarifocalNet](https://arxiv.org/abs/2008.13367).
+- Refactored documentation with more tutorials.
+
+#### New Features
+
+- Support GIoU calculation in `BboxOverlaps2D`, and re-implement `giou_loss` using `bbox_overlaps` (#3936)
+- Support random sampling in CPU mode (#3948)
+- Support VarifocalNet (#3666, #4024)
+
+#### Bug Fixes
+
+- Fix SABL validating bug in Cascade R-CNN (#3913)
+- Avoid division by zero in PAA head when num_pos=0 (#3938)
+- Fix temporary directory bug of multi-node testing error (#4034, #4017)
+- Fix `--show-dir` option in test script (#4025)
+- Fix GA-RetinaNet r50 model url (#3983)
+- Update code in docs and fix broken urls (#3947)
+
+#### Improvements
+
+- Refactor pytorch2onnx API into `mmdet.core.export` and use `generate_inputs_and_wrap_model` for pytorch2onnx (#3857, #3912)
+- Update RPN upgrade scripts for v2.5.0 compatibility (#3986)
+- Use mmcv `tensor2imgs` (#4010)
+- Update test robustness (#4000)
+- Update trouble shooting page (#3994)
+- Accelerate PAA training speed (#3985)
+- Support batch_size > 1 in validation (#3966)
+- Use RoIAlign implemented in MMCV for inference in CPU mode (#3930)
+- Documentation refactoring (#4031)
+
 ### v2.5.0 (5/10/2020)
 
 #### Highlights
